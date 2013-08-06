@@ -46,4 +46,18 @@ class BigDecimal
     self.compareTo(y) > 0
   end
 
+  def ==(y)
+    self.equals(y)
+  end
+
+  def !=(y)
+    !self.equals(y)
+  end
+
+  def <=>(y)
+    return 0  if self == y
+    return 1  if self > y
+    return -1 if self < y
+  end
+
 end
