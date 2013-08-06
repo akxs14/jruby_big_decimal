@@ -300,4 +300,77 @@ describe BigDecimal do
     end
   end
 
+  describe "BigDecimal#==" do
+    it "should return true for equal integers" do
+      operant_a = BigDecimal.new "1"
+      operant_b = BigDecimal.new "1"
+      (operant_a == operant_b).should be_true
+    end
+
+    it "should return false for inequal integers" do
+      operant_a = BigDecimal.new "1"
+      operant_b = BigDecimal.new "0"
+      (operant_a == operant_b).should be_false
+    end
+
+    it "should return true for equal reals" do
+      operant_a = BigDecimal.new "1.00"
+      operant_b = BigDecimal.new "1.00"
+      (operant_a == operant_b).should be_true
+    end
+
+    it "should return false for inequal reals" do
+      operant_a = BigDecimal.new "1.00"
+      operant_b = BigDecimal.new "0.00"
+      (operant_a == operant_b).should be_false
+    end
+  end
+
+  describe "BigDecimal#!=" do
+    it "should return false for equal integers" do
+      operant_a = BigDecimal.new "1"
+      operant_b = BigDecimal.new "1"
+      (operant_a != operant_b).should be_false
+    end
+
+    it "should return true for inequal integers" do
+      operant_a = BigDecimal.new "1"
+      operant_b = BigDecimal.new "0"
+      (operant_a != operant_b).should be_true
+    end
+
+    it "should return false for equal reals" do
+      operant_a = BigDecimal.new "1.00"
+      operant_b = BigDecimal.new "1.00"
+      (operant_a != operant_b).should be_false
+    end
+
+    it "should return true for inequal reals" do
+      operant_a = BigDecimal.new "1.00"
+      operant_b = BigDecimal.new "0.00"
+      (operant_a != operant_b).should be_true
+    end
+  end
+
+  describe "BigDecimal#<=>" do
+    it "should return 0 when a equals b" do
+      operant_a = BigDecimal.new "1.00"
+      operant_b = BigDecimal.new "1.00"
+      (operant_a <=> operant_b).should == 0
+    end
+
+    it "should return 1 when a is greater than b" do
+      operant_a = BigDecimal.new "1.00"
+      operant_b = BigDecimal.new "0.00"
+      (operant_a <=> operant_b).should == 1
+    end
+
+    it "should return -1 when a is smaller than b" do
+      operant_a = BigDecimal.new "0.00"
+      operant_b = BigDecimal.new "1.00"
+      (operant_a <=> operant_b).should == -1
+    end
+
+  end
+
 end
