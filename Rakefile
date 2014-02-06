@@ -1,7 +1,7 @@
 task :console do
   require 'irb'
   require 'irb/completion'
-  require 'jruby_big_decimal'
+  require_relative 'lib/big_decimal'
   ARGV.clear
   IRB.start
 end

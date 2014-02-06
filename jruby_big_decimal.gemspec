@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
                   " <. >, >=, <=>, ==, !=, ===, >>, <<"
   s.authors     = ["Angelos Kapsimanis"]
   s.email       = "angelos.kapsimanis@gmail.com"
-  s.files       = ["lib/bid_decimal.rb"]
+  s.files       = ["lib/big_decimal.rb, Rakefile"]
   s.homepage    = "https://github.com/akxs14/jruby_big_decimal"
   s.license     = "MIT"
 end
